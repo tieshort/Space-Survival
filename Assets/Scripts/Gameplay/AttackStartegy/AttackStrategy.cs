@@ -55,11 +55,3 @@ public abstract class AttackStrategy : MonoBehaviour
         return resultDirection;
     }
 }
-
-public struct AttackContext
-{
-    //public Transform attackOrigin;
-    public Vector2 direction;
-    public int layer;
-    public Attack sender;
-}
