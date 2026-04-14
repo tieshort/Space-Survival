@@ -1,0 +1,37 @@
+:root {
+}
+
+.centerPanel {
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.menuRegularButton {
+    -unity-font-definition: url("project://database/Assets/Fonts/gomarice_no_continue.ttf?fileID=12800000&guid=0ada29683aab64f44b5167dbc57db118&type=3#gomarice_no_continue");
+    font-size: 50px;
+    -unity-text-align: middle-center;
+    color: rgb(255, 255, 255);
+    -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-text-outline-width: 1px;
+    width: 395px;
+    height: 93px;
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    background-image: url("project://database/Assets/Space_Exploration_GUI_Kit/Grid_Components/Large/dark-square-button-blank-large.png?fileID=2800000&guid=38ed20aab188f4141ad54a57f26b8a9e&type=3#dark-square-button-blank-large");
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+}
+
+.menuRegularButton:hover {
+    scale: 1.05 1.05;
+    transition-property: scale;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}

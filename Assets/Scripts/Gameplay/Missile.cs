@@ -1,0 +1,41 @@
+using UnityEngine;
+
+[RequireComponent (typeof(Rigidbody2D))]
+public class Missile : MonoBehaviour
+{
+    public float damage = 10f;
+    public float speed = 20f;
+
+    public Vector2 direction;
+    [SerializeField] private float lifetime = 3f;
+
+    private Rigidbody2D _rb;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        direction = transform.up;
+    }
+
+    private void FixedUpdate()
+    {
+        if (lifetime < 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _rb.MovePosition((Vector2)transform.position + speed * Time.fixedDeltaTime * (Vector2)transform.up);
+        lifetime -= Time.fixedDeltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<Health>(out var health))
+        {
+            health.TakeDamage(damage);
+        }
+
+        Destroy(gameObject);
+    }
+}

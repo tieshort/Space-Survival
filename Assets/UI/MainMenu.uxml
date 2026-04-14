@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenuStyleSheet.uss?fileID=7433441132597879392&amp;guid=da94a91bba3e5f44db69487747af32ac&amp;type=3#MainMenuStyleSheet"/>
+    <ui:VisualElement name="container-panel" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Space_Exploration_GUI_Kit/Background_Images/large/home-background-large.png?fileID=2800000&amp;guid=20219dabb45dcf547b0390f6d10f76d2&amp;type=3#home-background-large&quot;);">
+        <ui:VisualElement name="center-panel" class="centerPanel" style="height: auto; width: 100%; top: 20%;">
+            <ui:Label text="Space Survival" name="headline__label" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/DnaBeast-MDEv%20SDF.asset?fileID=11400000&amp;guid=0bdc2a74c0da70f43a613fc9c4b4051f&amp;type=2#DnaBeast-MDEv SDF&quot;); -unity-text-align: middle-center; -unity-font-style: bold; font-size: 55px; color: rgb(255, 165, 0); height: 150px; -unity-text-outline-width: 2px; -unity-text-outline-color: rgb(255, 69, 0); text-shadow: 3px 2px 0 rgb(0, 0, 0); width: 100%;"/>
+            <ui:Button text="START GAME" name="start-game__button" class="menuRegularButton"/>
+            <ui:Button text="SELECT LEVEL" name="select-level__button" class="menuRegularButton"/>
+            <ui:Button text="EXIT" name="exit__button" class="menuRegularButton"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
