@@ -5,33 +5,29 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float baseValue = 20.0f;
-    [SerializeField] private Slider linkedHealthBar;
 
     public float HealthMultiplier { get; set; } = 1f;
     public float AdditionalBaseHealth { get; set; } = 0f;
 
+    private float maxValue;
     private float actualValue;
 
+    public UnityEvent OnDamage;
     public UnityEvent OnLethalDamage;
 
     private void Start()
     {
-        CalculateHealthValue();
+        maxValue = (baseValue + AdditionalBaseHealth) * HealthMultiplier;
+        actualValue = maxValue;
     }
 
-    public void CalculateHealthValue()
+    public void UpdateHealthBar(Slider healthBar)
     {
-        actualValue = (baseValue + AdditionalBaseHealth) * HealthMultiplier;
-        UpdateHealthBar();
-    }
-
-    private void UpdateHealthBar()
-    {
-        if (linkedHealthBar != null)
+        if (healthBar != null)
         {
-            linkedHealthBar.maxValue = actualValue;
-            linkedHealthBar.minValue = 0;
-            linkedHealthBar.value = actualValue;
+            healthBar.maxValue = maxValue;
+            healthBar.minValue = 0;
+            healthBar.value = actualValue;
         }
     }
 
@@ -41,16 +37,13 @@ public class Health : MonoBehaviour
 
         actualValue = Mathf.Max(0, actualValue - damage);
 
-        if (linkedHealthBar != null)
-        {
-            linkedHealthBar.value = actualValue;
-        }
-
         if (actualValue == 0)
         {
             gameObject.SetActive(false);
             OnLethalDamage.Invoke();
             return;
         }
+
+        OnDamage.Invoke();
     }
 }
