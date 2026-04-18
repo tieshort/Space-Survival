@@ -714,8 +714,12 @@ MonoBehaviour:
   enemyOrderList:
   - gameObject: {fileID: 3455150402446435097, guid: d5a5b8771516361488baf402b868d637, type: 3}
     count: 3
-  - gameObject: {fileID: 3455150402446435097, guid: d5a5b8771516361488baf402b868d637, type: 3}
+  - gameObject: {fileID: 8840739739630477652, guid: 9d594dd49f57ce94197625399302b799, type: 3}
     count: 5
+  - gameObject: {fileID: 3455150402446435097, guid: d5a5b8771516361488baf402b868d637, type: 3}
+    count: 8
+  - gameObject: {fileID: 8840739739630477652, guid: 9d594dd49f57ce94197625399302b799, type: 3}
+    count: 10
   levelSpawnPoints:
   - {fileID: 112257479}
   - {fileID: 252752966}
@@ -2523,6 +2527,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 146635307b7209d43bc5dddabdce12f2, type: 2}
     - target: {fileID: 4444285018868316887, guid: 1ea6de0f19418944dbdfaabc04899cfd, type: 3}
       propertyPath: linkedHealthBar
+      value: 
+      objectReference: {fileID: 225065241}
+    - target: {fileID: 4624450193455335201, guid: 1ea6de0f19418944dbdfaabc04899cfd, type: 3}
+      propertyPath: healthBar
       value: 
       objectReference: {fileID: 225065241}
     - target: {fileID: 6536749700203093068, guid: 1ea6de0f19418944dbdfaabc04899cfd, type: 3}

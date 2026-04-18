@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 6725245642436999393}
   - component: {fileID: 419530791381106530}
   - component: {fileID: -8310967397819986340}
+  - component: {fileID: 2801076596307782058}
   - component: {fileID: 7275742067080558922}
   - component: {fileID: -2700115623405773144}
   - component: {fileID: 3810760270077473853}
@@ -462,10 +463,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   baseValue: 20
-  linkedHealthBar: {fileID: 2037549107978121560}
+  OnDamage:
+    m_PersistentCalls:
+      m_Calls: []
   OnLethalDamage:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2801076596307782058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455150402446435097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80870fab2f20ea2458bf47cc7b31e9d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBar
+  healthBar: {fileID: 2037549107978121560}
 --- !u!114 &7275742067080558922
 MonoBehaviour:
   m_ObjectHideFlags: 0
