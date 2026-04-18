@@ -29,9 +29,9 @@ public class Missile : MonoBehaviour
         lifetime -= Time.fixedDeltaTime;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Health>(out var health))
+        if (collision.TryGetComponent<Health>(out var health))
         {
             health.TakeDamage(damage);
         }
