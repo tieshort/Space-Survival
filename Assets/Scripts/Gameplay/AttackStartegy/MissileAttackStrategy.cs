@@ -3,8 +3,8 @@ using UnityEngine;
 //[CreateAssetMenu(fileName = "MissileShotAttackStrategy", menuName = "Scriptable Objects/Missile Shot Attack Strategy")]
 public class MissileAttackStrategy : AttackStrategy
 {
-    public GameObject missilePrefab;
-    public string missileLayerName;
+    [SerializeField] protected GameObject missilePrefab;
+    [SerializeField] protected string missileLayerName;
 
     public override void Attack()
     {
