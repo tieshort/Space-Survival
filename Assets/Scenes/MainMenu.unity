@@ -301,6 +301,9 @@ MonoBehaviour:
   OnLevelWon:
     m_PersistentCalls:
       m_Calls: []
+  OnLevelLost:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &608660925
 Transform:
   m_ObjectHideFlags: 0
