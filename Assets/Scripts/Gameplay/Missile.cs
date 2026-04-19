@@ -5,8 +5,6 @@ public class Missile : MonoBehaviour
 {
     public float damage = 10f;
     public float speed = 20f;
-
-    public Vector2 direction;
     [SerializeField] private float lifetime = 3f;
 
     private Rigidbody2D _rb;
@@ -14,7 +12,6 @@ public class Missile : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        direction = transform.up;
     }
 
     private void FixedUpdate()
