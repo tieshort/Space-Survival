@@ -16,20 +16,24 @@ public class CurrencyClaimer : MonoBehaviour
         }
     }
 
-    public void TryGetCurrency(Collider2D collider)
+    public void TryGetCurrency(GameObject coin)
     {
-        if (collider.TryGetComponent<CurrencyItem>(out var currencyItem))
+        if (coin.TryGetComponent<CurrencyItem>(out var currencyItem))
         {
             currencyItem.Claim();
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void ClaimAll()
     {
-        //TryGetCurrency(collision);
+        foreach(var coin in FindObjectsByType<CurrencyItem>(FindObjectsSortMode.None))
+        {
+            coin.Claim();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        TryGetCurrency(collision.collider);
+        TryGetCurrency(collision.gameObject);
     }
 }
