@@ -4,15 +4,16 @@ using UnityEngine;
 public class CurrencyAsset : ScriptableObject
 {
     [SerializeField] private float currencyAmount;
-    public float CurrencyAmount { get => currencyAmount; private set => currencyAmount = value; }
+    public float CurrencyAmount { get => currencyAmount; }
 
     [SerializeField] private float tmpCurrencyVault;
+    public float TmpCurrencyAmount { get => tmpCurrencyVault; }
 
     public bool TrySpendCurrency(float value)
     {
         if (value > CurrencyAmount) return false;
 
-        CurrencyAmount -= value;
+        currencyAmount -= value;
         return true;
     }
 
@@ -23,7 +24,7 @@ public class CurrencyAsset : ScriptableObject
             tmpCurrencyVault += value;
             return;
         }
-        CurrencyAmount += value;
+        currencyAmount += value;
     }
 
     public void ClaimTmpVault()

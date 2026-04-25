@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,8 +5,11 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject losePanel;
-    [SerializeField] private TMP_Text remainingEnemiesText;
+    [SerializeField] private TMP_Text remainingEnemiesLabel;
     [SerializeField] private EnemySpawner spawner;
+    [SerializeField] private TMP_Text currencyTotalAmountLabel;
+    [SerializeField] private TMP_Text currencyTmpAmountLabel;
+    [SerializeField] private CurrencyAsset currencyAsset;
 
     private void Start()
     {
@@ -29,7 +31,9 @@ public class UIManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        remainingEnemiesText.text = spawner.RemainingEnemies.ToString();
+        remainingEnemiesLabel.text = spawner.RemainingEnemies.ToString();
+        currencyTotalAmountLabel.text = currencyAsset.CurrencyAmount.ToString();
+        currencyTmpAmountLabel.text = $"({currencyAsset.TmpCurrencyAmount})";
     }
 
     public void QuitButton_OnClick()
