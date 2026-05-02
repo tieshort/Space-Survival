@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
         Levels.Instance.LoadLevelSelection();
     }
 
+    public void LoadShopScene()
+    {
+        Levels.Instance.LoadShop();
+    }
+
     public void ExitGame()
     {
         Levels.Instance.QuitGame();
