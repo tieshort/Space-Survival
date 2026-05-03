@@ -15,7 +15,12 @@ public class Health : MonoBehaviour
     public UnityEvent OnDamage;
     public UnityEvent OnLethalDamage;
 
-    private void Start()
+    private void OnEnable()
+    {
+        CalculateHealth();
+    }
+
+    private void CalculateHealth()
     {
         maxValue = (baseValue + AdditionalBaseHealth) * HealthMultiplier;
         actualValue = maxValue;

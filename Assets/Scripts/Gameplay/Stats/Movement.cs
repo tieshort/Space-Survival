@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -12,9 +13,24 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D _rb;
 
+    public float AdditionalBaseSpeed { get; set; }
+    public float SpeedMultiplier { get; set; }
+
+    private float actualSpeed;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void OnEnable()
+    {
+        CalculateSpeed();
+    }
+
+    private void CalculateSpeed()
+    {
+        actualSpeed = (speed + AdditionalBaseSpeed) * SpeedMultiplier;
     }
 
     public void SetPosition(Vector2 newTargetPosition)
@@ -43,7 +59,7 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
-        _rb.MovePosition((Vector2)transform.position + speed * Time.fixedDeltaTime * TargetDirection);
+        _rb.MovePosition((Vector2)transform.position + actualSpeed * Time.fixedDeltaTime * TargetDirection);
     }
 
     private void OnDrawGizmos()
