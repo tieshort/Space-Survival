@@ -1,26 +1,18 @@
 using UnityEngine;
 
-public abstract class Upgrade: ScriptableObject
+[CreateAssetMenu(fileName = "PlayerUpgrade", menuName = "Upgrade Instance/Upgrade")]
+public class Upgrade : ScriptableObject
 {
-    public void Apply(float value, Health target, UpgradeType upgradeType)
-    {
+    public StatUpgrade healthUpgrade;
+    public StatUpgrade movementUpgrade;
+    public StatUpgrade rotationUpgrade;
 
-    }
-
-    public void Apply(float value, Movement target, UpgradeType upgradeType) 
-    { 
-
-    }
-
-    public void Apply(float value, Attack target, UpgradeType upgradeType)
-    {
-
-    }
+    public StatUpgrade damageUpgrade;
+    public StatUpgrade attackSpeedUpgrade;
 }
-
-public enum UpgradeType
+[System.Serializable]
+public struct StatUpgrade
 {
-    Override,
-    Additive,
-    Multiplicative,
+    public float AdditionalBaseValue;
+    public float ValueMultiplier;
 }
