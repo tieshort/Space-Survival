@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 4444285018868316887}
   - component: {fileID: 4624450193455335201}
   - component: {fileID: 3049332658426471296}
+  - component: {fileID: 2714573821659694979}
   - component: {fileID: 2271118065271293051}
   - component: {fileID: 8966576832091227921}
   m_Layer: 6
@@ -192,6 +193,23 @@ MonoBehaviour:
   currencyLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &2714573821659694979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144103438972146907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03bb9937979a8d146b7c1b48093df2c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeManager
+  upgradableHealth: {fileID: 4444285018868316887}
+  upgradableAttack: {fileID: 1040358297873932268}
+  upgradableMovement: {fileID: 7211458373632278907}
+  upgradableRotation: {fileID: 3680433392998687225}
+  upgradeInstance: {fileID: 11400000, guid: 2a4a66792cef49746a492f13eb1e00c9, type: 2}
 --- !u!50 &2271118065271293051
 Rigidbody2D:
   serializedVersion: 5
