@@ -5,8 +5,8 @@ public class Rotation : MonoBehaviour
     public float rotationSpeed = 5;
     private Vector2 targetDirection;
 
-    public float AdditionalBaseSpeed { get; set; }
-    public float SpeedMultiplier { get; set; }
+    public float AdditionalBaseSpeed { get; set; } = 0f;
+    public float SpeedMultiplier { get; set; } = 1f;
 
     private float actualRotationSpeed;
 

@@ -13,8 +13,8 @@ public class Movement : MonoBehaviour
 
     private Rigidbody2D _rb;
 
-    public float AdditionalBaseSpeed { get; set; }
-    public float SpeedMultiplier { get; set; }
+    public float AdditionalBaseSpeed { get; set; } = 0f;
+    public float SpeedMultiplier { get; set; } = 1f;
 
     private float actualSpeed;
 
